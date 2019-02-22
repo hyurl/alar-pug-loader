@@ -1,0 +1,31 @@
+{
+  "name": "alar-pug-loader",
+  "version": "1.0.0",
+  "description": "Pug loader for Alar framework.",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "alar",
+    "pug"
+  ],
+  "author": {
+    "name": "Ayon Lee",
+    "email": "i@hyurl.com",
+    "url": "http://hyurl.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyurl/alar-pug-loader.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/pug": "^2.0.4",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "alar": "^2.0.3"
+  }
+}
