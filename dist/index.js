@@ -8,18 +8,17 @@ class PugLoader {
         this.extesion = ".pug";
         this.cache = {};
     }
-    load(path) {
-        if (this.cache[path]) {
-            return this.cache[path];
+    load(filename) {
+        if (this.cache[filename]) {
+            return this.cache[filename];
         }
-        let filename = path + this.extesion;
         let tpl = fs.readFileSync(filename, this.options.encoding || "utf8");
-        return this.cache[path] = {
+        return this.cache[filename] = {
             render: pug.compile(tpl, Object.assign({}, this.options, { filename, cache: false }))
         };
     }
-    unload(path) {
-        delete this.cache[path];
+    unload(filename) {
+        delete this.cache[filename];
     }
 }
 exports.PugLoader = PugLoader;

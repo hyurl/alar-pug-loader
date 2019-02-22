@@ -32,19 +32,18 @@ export namespace PugLoader {
 
 export class PugLoader implements ModuleLoader {
     extesion = ".pug";
-    cache: { [path: string]: PugLoader.View } = {};
+    cache: { [filename: string]: PugLoader.View } = {};
 
     constructor(private options: PugLoader.Options = {}) { }
 
-    load(path: string) {
-        if (this.cache[path]) {
-            return this.cache[path];
+    load(filename: string) {
+        if (this.cache[filename]) {
+            return this.cache[filename];
         }
 
-        let filename = path + this.extesion;
         let tpl = fs.readFileSync(filename, this.options.encoding || "utf8");
 
-        return this.cache[path] = {
+        return this.cache[filename] = {
             render: pug.compile(tpl, {
                 ...this.options,
                 filename,
@@ -53,8 +52,8 @@ export class PugLoader implements ModuleLoader {
         };
     }
 
-    unload(path: string) {
-        delete this.cache[path];
+    unload(filename: string) {
+        delete this.cache[filename];
     }
 }
 
