@@ -31,7 +31,7 @@ export namespace PugLoader {
 }
 
 export class PugLoader implements ModuleLoader {
-    extesion = ".pug";
+    extension = ".pug";
     cache: { [filename: string]: PugLoader.View } = {};
 
     constructor(private options: PugLoader.Options = {}) { }

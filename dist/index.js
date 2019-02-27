@@ -5,7 +5,7 @@ const pug = require("pug");
 class PugLoader {
     constructor(options = {}) {
         this.options = options;
-        this.extesion = ".pug";
+        this.extension = ".pug";
         this.cache = {};
     }
     load(filename) {
